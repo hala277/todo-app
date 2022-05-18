@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
     Card,
     FormGroup,
     InputGroup,
     Button,
     Elevation,
+    Switch,
+   
 } from '@blueprintjs/core';
+import {SettingsContext} from '../../context/settings/context';
 
 function Form(props) {
-
+const settings = useContext(SettingsContext);
     return (
 <div style={ {width: '100%',
     display: 'flex',flexDirection: 'column',flexWrap: 'nowrap', marginRight: '200px'}}>
@@ -33,11 +36,20 @@ function Form(props) {
                     <br />
                     <span>Difficulty</span>
                     <br />
-                    <input onChange={props.handleChange} intent={'primary'} defaultValue={3} type="range" min={1} max={5} name="difficulty" />
+                    <input onChange={props.handleChange} intent={'primary'} defaultValue={1} type="range" min={1} max={5} name="difficulty" />
                 </label>
                 <br/> <br/>
                 <label>
                     <Button className="bp3-button bp3-icon-add" intent={'primary'} type="submit">Add Item</Button>
+                </label>
+           <br></br>
+                <label>
+                <span>Show Completed Tasks</span>
+                <Switch checked={settings.state.displayItem} onChange={settings.state.displayItems}/>
+                </label>
+                <label>
+                <span>Number of Item </span>
+                <input type="number" min="1" max="5" value={settings.state.displayPerScreen} onChange={settings.state.toDisplayPerScreen}/>
                 </label>
                 </FormGroup>
             </form>

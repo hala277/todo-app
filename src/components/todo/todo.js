@@ -26,7 +26,7 @@ const ToDo = () => {
 
   function toggleComplete(id) {
 
-    const items = list.map((item,key) => {
+    const items = list.map(item => {
       if (item.id == id) {
         item.complete = !item.complete;
       }
@@ -55,7 +55,7 @@ const ToDo = () => {
       </Navbar>
     
       <Form handleSubmit={handleSubmit} handleChange={handleChange}  />
-      <List toggleComplete={toggleComplete} list={list} deleteItem={deleteItem}/>
+      <List toggleComplete={toggleComplete} list={list} deleteItem={deleteItem} setList={setList}/>
      
     </>
   );

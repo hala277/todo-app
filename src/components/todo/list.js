@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext, useState } from 'react';
 import { Card, Elevation, Button } from '@blueprintjs/core';
 import { SettingsContext } from '../../context/settings/context'
@@ -24,6 +24,15 @@ function List(props) {
         setNext(next - settings.state.displayPerScreen);
         setPrev(prev - settings.state.displayPerScreen);
     }
+
+    useEffect(() => {
+        if(!settings.state.displayItem){
+            const item = props.list.filter((item) => item.complete === false);
+            props.setList([...item]);
+        }
+    },[settings.state.displayItem])
+
+   
 
     return (
 
