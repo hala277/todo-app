@@ -6,7 +6,7 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import LogInPreovider from './context/auth/context';
 import Login from './context/auth/login';
-import Auth from './context/auth/auth';
+// import Auth from './context/auth/auth';
 
 export default function App () {
   
@@ -14,13 +14,15 @@ export default function App () {
     
       <>
       <LogInPreovider>
+
+        
         <Login/>
-        <Auth capability='read'>
+        {/* <Auth capability='read'> */}
         <SettingsProvider>
           <ToDo />
           
         </SettingsProvider>
-        </Auth>
+        {/* </Auth> */}
         </LogInPreovider>
       </>
     );

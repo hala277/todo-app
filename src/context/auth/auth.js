@@ -4,10 +4,10 @@ import {AuthContext} from "./context.js";
 
 export default function Auth(props){
     const context = useContext(AuthContext);
-    const canDO = context.canDo(props.capability);
+    // const canDO1 = context.canDo(props.capability);
 
     return(
-        <When condition={context.logIn && canDO}>
+        <When condition={context.logIn && context.canDo(props.capability)}>
             {props.children}
         </When>
     )

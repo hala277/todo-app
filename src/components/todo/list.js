@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useContext, useState } from 'react';
 import { Card, Elevation, Button } from '@blueprintjs/core';
 import { SettingsContext } from '../../context/settings/context'
+import Auth from '../../context/auth/auth';
 
 function List(props) {
 
@@ -44,7 +45,9 @@ function List(props) {
                     <p><small>Assigned to: {item.assignee}</small></p>
                     <p><small>Difficulty: {item.difficulty}</small></p>
                     <Button type="button" intent={item.complete ? 'success' : 'Disabled'} onClick={() => props.toggleComplete(item.id)}>Complete</Button>
+                 
                     <Button onClick={() => props.deleteItem(item.id)} type="button" intent={'danger'}> X </Button>
+                    
                     <hr />
                 </Card>
             ))}
