@@ -12,6 +12,7 @@ const API = 'https://halaauth-api.herokuapp.com';
 export default function LogInPreovider(props) {
     const [logIn, setLogIn] = useState(false);
     const [user, setUser] = useState({});
+    const[token,setToken] = useState(null);
 
     const login = async (username, password) => {
         const encodePassword = base64.encode(`${username}:${password}`);
@@ -58,10 +59,11 @@ export default function LogInPreovider(props) {
     useEffect(() => {
         const userInfo = cookie.load('token');
         validateUser(userInfo);
+        setToken(userInfo)
     }, []);
 
-    const canDo = (capability) => {
-        return user?.actions?.includes(capability);
+    const canDo = (actions) => {
+        return user?.actions?.includes(actions);
     }
 
     const state = {
@@ -70,7 +72,8 @@ export default function LogInPreovider(props) {
         login,
         signup,
         logOut,
-        canDo
+        canDo,
+        token
     }
 
     return(

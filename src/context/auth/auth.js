@@ -7,7 +7,7 @@ export default function Auth(props){
     // const canDO1 = context.canDo(props.capability);
 
     return(
-        <When condition={context.logIn && context.canDo(props.capability)}>
+        <When condition={context.logIn && context.canDo(props.actions)}>
             {props.children}
         </When>
     )
