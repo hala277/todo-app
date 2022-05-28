@@ -40,11 +40,11 @@ const settings = useContext(SettingsContext);
                     <input onChange={props.handleChange} intent={'primary'} defaultValue={1} type="range" min={1} max={5} name="difficulty" />
                 </label>
                 <br/> <br/>
-               <Auth actions='create'>
+               {/* <Auth actions='create'> */}
                 <label>
                     <Button className="bp3-button bp3-icon-add" intent={'primary'} type="submit">Add Item</Button>
                 </label>
-                </Auth>
+                {/* </Auth> */}
            <br></br>
                 <label>
                 <span>Show Completed Tasks</span>
