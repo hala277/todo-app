@@ -44,10 +44,12 @@ function List(props) {
                     <p>{item.text}</p>
                     <p><small>Assigned to: {item.assignee}</small></p>
                     <p><small>Difficulty: {item.difficulty}</small></p>
+                    {/* <Auth actions='update'> */}
                     <Button type="button" intent={item.complete ? 'success' : 'Disabled'} onClick={() => props.toggleComplete(item.id)}>Complete</Button>
-                 
+                    {/* </Auth> */}
+                    {/* <Auth actions='delete'> */}
                     <Button onClick={() => props.deleteItem(item.id)} type="button" intent={'danger'}> X </Button>
-                    
+                    {/* </Auth> */}
                     <hr />
                 </Card>
             ))}

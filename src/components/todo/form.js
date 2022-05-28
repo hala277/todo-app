@@ -9,7 +9,7 @@ import {
    
 } from '@blueprintjs/core';
 import {SettingsContext} from '../../context/settings/context';
-
+import Auth from '../../context/auth/auth';
 
 function Form(props) {
 const settings = useContext(SettingsContext);
@@ -40,11 +40,11 @@ const settings = useContext(SettingsContext);
                     <input onChange={props.handleChange} intent={'primary'} defaultValue={1} type="range" min={1} max={5} name="difficulty" />
                 </label>
                 <br/> <br/>
-               
+               {/* <Auth actions='create'> */}
                 <label>
                     <Button className="bp3-button bp3-icon-add" intent={'primary'} type="submit">Add Item</Button>
                 </label>
-               
+                {/* </Auth> */}
            <br></br>
                 <label>
                 <span>Show Completed Tasks</span>

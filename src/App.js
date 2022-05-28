@@ -17,7 +17,7 @@ export default function App () {
 
         
         <Login/>
-        {/* <Auth capability='read'> */}
+        {/* <Auth actions='read'> */}
         <SettingsProvider>
           <ToDo />
           
